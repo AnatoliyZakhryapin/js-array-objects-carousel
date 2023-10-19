@@ -1,4 +1,5 @@
-// Creazione del contenuto tramite javascript
+
+/*---------Creazione del contenuto tramite javascript--------*/
 
 const images = [
 	{
@@ -27,3 +28,23 @@ const images = [
 		text: "Marvel's Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.",
 	},
 ]
+
+const carouselBoxDOMElement = document.querySelector(".carousel-box");
+
+images.forEach((element) =>{
+    const html = `
+    <div class="card">
+        <img src="./${element.image}" class="card-img image-carousel">
+        <div class="card-img-overlay-custom">
+            <h5 class="card-title">${element.title}</h5>
+            <p class="card-text">${element.text}</p>
+        </div>
+    </div>
+    `;  
+    carouselBoxDOMElement.innerHTML += html;
+    console.log(html)
+})
+
+
+/*--------------------FUNZIONI----------------------*/
+
