@@ -1,0 +1,1 @@
+# Carosello Array di Oggetti
