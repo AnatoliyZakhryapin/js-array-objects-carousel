@@ -49,13 +49,17 @@
     background-image: url(./img/05.webp);
 }
 
-.image-carousel {
-    max-width: 100%;
+.card {
     display: none;
 }
 
-.image-carousel.active {
+.card.active {
     display: block;
+}
+
+
+.image-carousel {
+    max-width: 100%;
 }
 
 .icon-custom {
