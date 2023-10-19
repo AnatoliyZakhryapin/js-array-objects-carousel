@@ -4,8 +4,16 @@
 }
 
 .carousel-box,
-.col-6 {
+.col-6,
+.feature-image {
     position: relative;
+}
+
+.card .card-img-overlay-custom {
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    text-align: end;
 }
 
 .carousel-box::after  {
