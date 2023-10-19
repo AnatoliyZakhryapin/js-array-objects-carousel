@@ -6,6 +6,7 @@ const images = [
 		image: 'img/01.webp',
 		title: "Marvel's Spiderman Miles Morale",
 		text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
+        background: ""
 	},
 	{
 		image: 'img/02.webp',
@@ -31,7 +32,7 @@ const images = [
 
 const carouselBoxDOMElement = document.querySelector(".carousel-box");
 
-images.forEach((element) =>{
+images.forEach((element, index) =>{
     const html = `
     <div class="card">
         <img src="./${element.image}" class="card-img image-carousel">
@@ -42,9 +43,60 @@ images.forEach((element) =>{
     </div>
     `;  
     carouselBoxDOMElement.innerHTML += html;
-    console.log(html)
 })
 
+/*---------Creazione evento click per cambiare img--------*/
+
+
+// Assegnamo classe active alla prima imagina
+const cardsDOMElement = document.querySelectorAll(".card");
+let currentIndex = 0; 
+const classActive = "active";
+const currentSlide = cardsDOMElement[currentIndex];
+currentSlide.classList.add(classActive)
+
+// - Aggiungiamo bg image alla prima imagine utilizzando indice della imagine corrente 
+carouselBoxDOMElement.classList.add(`bg-img-${currentIndex}`)  
+
+// Creamo DOMElement
+const arrowDownDOMElement = document.getElementById("arrow-down");
+const arrowUpDOMElement = document.getElementById("arrow-up");
+
+// Creamo eventi click 
+arrowDownDOMElement.addEventListener("click", function(){
+    // - Togliamo/Aggiungiamo i classi a img corrente
+    const activeSlide = cardsDOMElement[currentIndex];
+    activeSlide.classList.remove(classActive);
+    carouselBoxDOMElement.classList.remove(`bg-img-${currentIndex}`)
+
+    // - Assegnamo indexCurrent in base a posizione dello slide
+    if (currentIndex === cardsDOMElement.length - 1) {
+        currentIndex = 0
+    } else {
+        currentIndex++
+    }
+    // - Togliamo/Aggiungiamo i classi a img successiva  
+    const nextSlideElement = cardsDOMElement[currentIndex];
+    nextSlideElement.classList.add(classActive);
+    carouselBoxDOMElement.classList.add(`bg-img-${currentIndex}`)
+})
+
+arrowUpDOMElement.addEventListener("click", function(){
+    // - Togliamo/Aggiungiamo i classi a img corrente
+    const activeSlide = cardsDOMElement[currentIndex];
+    activeSlide.classList.remove(classActive);
+    carouselBoxDOMElement.classList.remove(`bg-img-${currentIndex}`)
+
+    // - Assegnamo indexCurrent in base a posizione dello slide
+    if (currentIndex === 0) {
+        currentIndex = cardsDOMElement.length - 1
+    } else {
+        currentIndex--
+    }
+    // - Togliamo/Aggiungiamo i classi a img successiva  
+    const nextSlideElement = cardsDOMElement[currentIndex];
+    nextSlideElement.classList.add(classActive);
+    carouselBoxDOMElement.classList.add(`bg-img-${currentIndex}`)
+})
 
 /*--------------------FUNZIONI----------------------*/
-
