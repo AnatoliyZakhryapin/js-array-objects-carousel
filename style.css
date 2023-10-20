@@ -1,6 +1,7 @@
      
 .carousel-box {
-    height:200px;    
+    height:200px;  
+    font-size: 6px;  
 }
 
 .carousel-box,
@@ -12,8 +13,10 @@
 .card .card-img-overlay-custom {
     position: absolute;
     bottom: 0;
-    padding: 10px;
+    right: 0;
+    padding: 20px;
     text-align: end;
+    color: white;
 }
 
 .carousel-box::after  {
@@ -26,7 +29,6 @@
     background-size: cover;
     filter: blur(2px)  brightness(0.3);
     z-index: -1;
-    background-image: url(./img/05.webp);
 }
 
 .carousel-box.bg-img-0::after  {
@@ -57,6 +59,9 @@
     display: block;
 }
 
+img {
+    max-height: 800px;    
+}
 
 .image-carousel {
     max-width: 100%;
@@ -68,6 +73,7 @@
     display: none;
     left: 50%;
     transform: translatex(-50%);
+    z-index: 1;
 } 
 
 .icon-top {
@@ -86,26 +92,26 @@
     display: block;
 }
 
-img {
-    max-height: 100%;    
-}
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
     .carousel-box {
-    height:400px;    
+    height:400px;  
+    font-size: 8px;   
     }
 }
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
     .carousel-box {
-    height:600px;    
+    height:600px;   
+    font-size: 12px; 
     }
 }
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .carousel-box {
-    height:800px;    
+    height:800px; 
+    font-size: 14px;    
     }
 }
 
