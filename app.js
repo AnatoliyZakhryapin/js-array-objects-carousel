@@ -64,6 +64,7 @@ const arrowUpDOMElement = document.getElementById("arrow-up");
 
 // Creamo eventi click 
 arrowDownDOMElement.addEventListener("click", function(){
+    console.log('click')
     // - Togliamo/Aggiungiamo i classi a img corrente
     const activeSlide = cardsDOMElement[currentIndex];
     activeSlide.classList.remove(classActive);

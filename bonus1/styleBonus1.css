@@ -123,11 +123,10 @@ img {
 
 .carousel-box-mini {
     width: 25%;
-    right: 0%;
+    right: -25%;
     z-index: 1;
     opacity: 0;
     height: 100%;
-    display: flex;
     flex-direction: column;
 }
 
